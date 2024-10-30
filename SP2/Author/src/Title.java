@@ -11,15 +11,15 @@ public abstract class Title {
         this.rate = 0.067574;
     }
     public double calculateRoyalty(){
-        return 20;
-    }
-    @Override
-    public String toString() {
-        return "\nTitle: " + title + "\nType of Lit: " + literatureType + "\nAmount of copies: " + copies;
+        return calculatePoints() * rate;
     }
 
     public String getLiteratureType() {
         return literatureType;
+    }
+    @Override
+    public String toString(){
+        return "Title: " + title + ", Type: " + literatureType;
     }
 
     public abstract double calculatePoints();
