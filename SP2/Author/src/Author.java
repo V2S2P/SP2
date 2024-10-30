@@ -14,12 +14,19 @@ public class Author {
         double totalPay = 0.0;
 
         for (Title title:titles){
-            totalPay += title.calculatePoints() * title.rate;
+            double royalty = title.calculateRoyalty();
+            System.out.println("Royalty for " + title + ": " + royalty);
+            totalPay += royalty;
         }
         return (float) totalPay;
     }
+    @Override
+    public String toString(){
+        return "Author: " + name +
+                "\nTitles: " + titles;
+    }
 
-    public ArrayList<Title> getTitles() {
-        return titles;
+    public String getName() {
+        return name;
     }
 }
